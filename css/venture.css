@@ -1,3 +1,7 @@
+body {
+  background-color: #fff;
+}
+
 /*==========================================================================
 Goal
 ============================================================================*/
@@ -8,6 +12,10 @@ Goal
   & .goal__image {
     padding: 0 20px;
     max-width: 434px;
+  }
+
+  & .goal__body {
+    padding-top: 0;
   }
 }
 
@@ -74,6 +82,24 @@ Goal
   }
 }
 
+body .invest-criteria {
+  & .about__head {
+    justify-content: space-between;
+  }
+  & .about__subtitle {
+    max-width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-wrap: auto;
+  }
+
+  & .border-line.element-animation::before {
+    /* transition: all 0.8s cubic-bezier(0.8, 0, 0, 0.8) 0.4s; */
+    transition: all 4s cubic-bezier(0.8, 0, 0, 0.8);
+  }
+}
+
 .invest-criteria__advantages {
   display: flex;
   flex-direction: column;
@@ -96,12 +122,9 @@ Goal
 
 .invest-criteria__advantage-content {
   display: grid;
-  grid-template-columns: 1fr 45.5%;
+  grid-template-columns: 1fr 52%;
   gap: 24px;
 
-  @media (max-width: 1000px) {
-    grid-template-columns: 1fr 54%;
-  }
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
   }
@@ -140,11 +163,19 @@ Goal
 }
 
 .venture-cases {
+  margin: 0;
+  padding: 80px 0;
+
   .venture-cases__slider {
     display: none;
     & .slider-nav {
       margin-top: 36px;
     }
+  }
+
+  @media (width < 1000px) {
+    padding: 0;
+    padding-bottom: 80px;
   }
 
   @media (width < 47.9375rem) {
@@ -203,7 +234,25 @@ Goal
   }
 }
 
+.invest-goal,
 .invest-new {
+  & .goal__image video {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    isolation: isolate;
+  }
+}
+
+.invest-new {
+  & .goal__body {
+    padding: 144px 0;
+    @media (max-width: 1000px) {
+      padding: 0;
+      padding-bottom: 20px;
+    }
+  }
+
   & .goal__card {
     background: #f7e9b3;
   }

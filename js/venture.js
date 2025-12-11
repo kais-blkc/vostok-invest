@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getColorForItem(item) {
     if (!item) return;
+    // если есть атрибут color взять его
     if (item.dataset.color) return item.dataset.color;
 
     const index = Array.from(items).indexOf(item);
@@ -144,123 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
   checkMode();
   window.addEventListener("resize", checkMode);
 });
-
-/*==========================================================================
-Projects cards
-============================================================================*/
-// document.addEventListener("DOMContentLoaded", () => {
-//   let projectSwiper = null;
-
-//   function activateFirstMobileProjectInEachSection() {
-//     if (window.innerWidth < 768) {
-//       const projectSections = document.querySelectorAll(".case");
-
-//       projectSections.forEach((section) => {
-//         const allProjectsInThisSection = section.querySelectorAll(
-//           '.case.open-popup[data-popup="projects-popup"]'
-//         );
-//         const activeProject = Array.from(allProjectsInThisSection).find((p) =>
-//           p.classList.contains("active")
-//         );
-
-//         if (!activeProject && allProjectsInThisSection.length) {
-//           allProjectsInThisSection.forEach((p) => p.classList.remove("active"));
-//           allProjectsInThisSection[0].classList.add("active");
-//         }
-//       });
-//     } else {
-//       const allActiveProjects = document.querySelectorAll(".case.active");
-//       allActiveProjects.forEach((p) => p.classList.remove("active"));
-//     }
-//   }
-
-//   activateFirstMobileProjectInEachSection();
-
-//   function initProjectSwiper(startIndex = 0) {
-//     if (projectSwiper) {
-//       projectSwiper.slideTo(startIndex, 0);
-//       return;
-//     }
-
-//     projectSwiper = new Swiper(".projects-popup__slider", {
-//       initialSlide: startIndex,
-//       effect: "card",
-//       slidesPerView: "auto",
-//       centeredSlides: true,
-//       speed: 500,
-//       keyboard: {
-//         enabled: true,
-//         onlyInViewport: true,
-//       },
-//       pagination: {
-//         el: ".projects-popup__paginataion",
-//         clickable: true,
-//       },
-//       navigation: {
-//         nextEl: ".projects-popup__next",
-//         prevEl: ".projects-popup__prev",
-//       },
-//       breakpoints: {
-//         768: {
-//           spaceBetween: 32,
-//         },
-//         1400: {
-//           spaceBetween: 64,
-//         },
-//       },
-//     });
-//   }
-
-//   const projects = document.querySelectorAll(
-//     ".case.open-popup[data-popup='projects-popup']"
-//   );
-
-//   projects.forEach((project, index) => {
-//     project.addEventListener(
-//       "click",
-//       function (e) {
-//         const isDesktop = window.innerWidth >= 768;
-
-//         // --- MOBILE ---
-//         if (!isDesktop) {
-//           e.preventDefault();
-//           e.stopImmediatePropagation();
-
-//           if (project.classList.contains("active")) {
-//             project.classList.remove("active");
-//             return;
-//           }
-
-//           const parentSection = project.closest(".projects");
-//           if (parentSection) {
-//             const allProjectsInThisSection = parentSection.querySelectorAll(
-//               '.case.open-popup[data-popup="projects-popup"]'
-//             );
-//             allProjectsInThisSection.forEach((p) =>
-//               p.classList.remove("active")
-//             );
-//             project.classList.add("active");
-//           }
-//           return;
-//         }
-
-//         // --- DESKTOP — открыть popup ---
-//         const popupId = project.dataset.popup;
-//         const popup = document.getElementById(popupId);
-//         if (!popup) return;
-
-//         popup.classList.add("active");
-
-//         setTimeout(() => initProjectSwiper(index), 50);
-//       },
-//       true
-//     );
-//   });
-
-//   window.addEventListener("resize", () => {
-//     activateFirstMobileProjectInEachSection();
-//   });
-// });
 
 /*==========================================================================
 Venture cases slider

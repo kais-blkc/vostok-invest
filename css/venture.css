@@ -12,6 +12,12 @@ Goal
   & .goal__image {
     padding: 0 20px;
     max-width: 434px;
+    @media (max-width: 1000px) {
+      max-width: 312px;
+    }
+    @media (max-width: 1000px) {
+      max-width: 332px;
+    }
   }
 
   & .goal__body {
@@ -155,16 +161,32 @@ body .invest-criteria {
 }
 
 .br-mobile {
-  & br {
-    @media (min-width: 400px) {
-      display: none;
-    }
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+
+.br-desc {
+  display: none;
+  @media (min-width: 1000px) {
+    display: block;
   }
 }
 
 .venture-cases {
   margin: 0;
   padding: 80px 0;
+
+  & .case__description {
+    max-width: 297px;
+    @media (max-width: 1000px) {
+      max-width: 251px;
+    }
+    @media (max-width: 767px) {
+      max-width: 261px;
+    }
+  }
 
   .venture-cases__slider {
     display: none;
@@ -206,6 +228,7 @@ body .invest-criteria {
         position: absolute;
         bottom: 20px;
         transition: all 0.3s ease-in-out;
+        max-width: 85%;
       }
 
       & .case__details {
@@ -249,7 +272,7 @@ body .invest-criteria {
     padding: 144px 0;
     @media (max-width: 1000px) {
       padding: 0;
-      padding-bottom: 20px;
+      padding-bottom: 90px;
     }
   }
 
@@ -419,6 +442,11 @@ body .invest-criteria {
 
       & a {
         color: #000;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 0.6;
+        }
       }
 
       & .checkbox-box {
@@ -428,12 +456,15 @@ body .invest-criteria {
         background: transparent;
         flex-shrink: 0;
         transition: all 0.3s ease-in-out;
+        cursor: pointer;
       }
 
       input {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: 0px;
+        height: 0px;
+        left: 0;
+        top: 0;
         opacity: 0;
         cursor: pointer;
       }

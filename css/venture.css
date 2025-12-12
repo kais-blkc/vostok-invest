@@ -6,6 +6,9 @@ body {
 Goal
 ============================================================================*/
 .invest-goal {
+  & .goal__title {
+    font-weight: 400;
+  }
   & .goal__card {
     background: #e6effb;
   }
@@ -55,9 +58,14 @@ Goal
     min-height: 216px;
   }
 
+  img {
+    max-width: 100px;
+  }
+
   & span {
     font-size: 24px;
     text-align: center;
+    max-width: 304px;
     @media (max-width: 1000px) {
       font-size: 20px;
     }
@@ -92,6 +100,13 @@ body .invest-criteria {
   & .about__head {
     justify-content: space-between;
   }
+
+  & .about__title.title {
+    @media (max-width: 1000px) {
+      margin-right: 1.8rem;
+    }
+  }
+
   & .about__subtitle {
     max-width: auto;
     display: flex;
@@ -101,7 +116,6 @@ body .invest-criteria {
   }
 
   & .border-line.element-animation::before {
-    /* transition: all 0.8s cubic-bezier(0.8, 0, 0, 0.8) 0.4s; */
     transition: all 4s cubic-bezier(0.8, 0, 0, 0.8);
   }
 }
@@ -129,7 +143,12 @@ body .invest-criteria {
 .invest-criteria__advantage-content {
   display: grid;
   grid-template-columns: 1fr 52%;
+  align-items: center;
   gap: 24px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 55%;
+  }
 
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
@@ -160,16 +179,21 @@ body .invest-criteria {
   }
 }
 
-.br-mobile {
+.br {
   display: none;
-  @media (max-width: 767px) {
+}
+.br-desc {
+  @media (min-width: 1000px) {
     display: block;
   }
 }
-
-.br-desc {
-  display: none;
-  @media (min-width: 1000px) {
+.br-tablet {
+  @media (min-width: 767px) and (max-width: 1000px) {
+    display: block;
+  }
+}
+.br-mobile {
+  @media (max-width: 767px) {
     display: block;
   }
 }
@@ -508,4 +532,12 @@ body .invest-criteria {
       height: 100%;
     }
   }
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }

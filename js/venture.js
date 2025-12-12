@@ -256,3 +256,21 @@ document.addEventListener("DOMContentLoaded", () => {
     input.nextElementSibling.textContent = message;
   }
 });
+
+/*==========================================================================
+Venture cases slider
+============================================================================*/
+document.addEventListener("DOMContentLoaded", function () {
+  var videos = document.querySelectorAll(".autoplay-video");
+
+  videos.forEach(function (video) {
+    if (!video || video.playing) return;
+    video.muted = true;
+    video.controls = false;
+    var promise = video.play();
+
+    if (promise !== undefined) {
+      promise.then(function () {}).catch(function (error) {});
+    }
+  });
+});

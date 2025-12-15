@@ -3,7 +3,9 @@ Advantages hover
 ============================================================================*/
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".invest-criteria__advantages");
-  const items = document.querySelectorAll(".about__advantage");
+  const items = document.querySelectorAll(
+    ".invest-criteria__advantages .about__advantage"
+  );
 
   if (!container || !items.length) return;
 
@@ -191,7 +193,6 @@ Form validation
 ============================================================================*/
 document.addEventListener("DOMContentLoaded", () => {
   const forms = document.querySelectorAll("form.validate-form");
-  console.log("forms", forms);
   if (!forms.length) return;
 
   forms.forEach((form) => {
@@ -259,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*==========================================================================
-Venture cases slider
+Venture video autoplay
 ============================================================================*/
 document.addEventListener("DOMContentLoaded", function () {
   var videos = document.querySelectorAll(".autoplay-video");

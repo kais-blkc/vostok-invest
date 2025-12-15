@@ -4,7 +4,7 @@ Advantages hover
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".invest-criteria__advantages");
   const items = document.querySelectorAll(
-    ".invest-criteria__advantages .about__advantage"
+    ".invest-criteria__advantages .about__advantage",
   );
 
   if (!container || !items.length) return;
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rootMargin: `-${linePercent * 100}% 0px -${
           (1 - linePercent) * 100
         }% 0px`,
-      }
+      },
     );
 
     items.forEach((item) => scrollObserver.observe(item));
@@ -151,20 +151,22 @@ document.addEventListener("DOMContentLoaded", () => {
 /*==========================================================================
 Venture cases slider
 ============================================================================*/
-const reviewsSlider = document.querySelector(".swiper-venture-cases");
+document.addEventListener("DOMContentLoaded", () => {
+  const ventureReviewsSlider = document.querySelector(".swiper-venture-cases");
 
-if (reviewsSlider) {
-  const reviewsSwiper = new Swiper(reviewsSlider, {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    autoHeight: true,
-    speed: 800,
-    navigation: {
-      nextEl: ".venture-cases__slide-next",
-      prevEl: ".venture-cases__slide-prev",
-    },
-  });
-}
+  if (ventureReviewsSlider) {
+    const reviewsSwiper = new Swiper(ventureReviewsSlider, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      autoHeight: true,
+      speed: 800,
+      navigation: {
+        nextEl: ".venture-cases__slide-next",
+        prevEl: ".venture-cases__slide-prev",
+      },
+    });
+  }
+});
 
 /*==========================================================================
 Input file 

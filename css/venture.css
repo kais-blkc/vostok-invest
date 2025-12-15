@@ -541,3 +541,24 @@ body .invest-criteria {
   left: 0;
   top: 0;
 }
+.form-popup__desc {
+  margin-top: 32px;
+  font-size: 18px;
+  text-align: center;
+
+  @media (max-width: 1000px) {
+    font-size: 16px;
+    margin-top: 24px;
+  }
+}
+
+#form-success-popup {
+  & .form-popup__body {
+    max-width: 636px;
+    min-height: 216px;
+
+    @media (max-width: 1000px) {
+      max-width: 728px;
+    }
+  }
+}

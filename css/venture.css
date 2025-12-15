@@ -560,5 +560,8 @@ body .invest-criteria {
     @media (max-width: 1000px) {
       max-width: 728px;
     }
+    @media (max-width: 767px) {
+      min-height: 186px;
+    }
   }
 }

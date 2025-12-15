@@ -245,7 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (isValid) {
-        form.submit();
+        // form.submit();
+        document.querySelector(".form-popup .form-popup__close").click();
+        document.querySelector(".hidden-open-form-success").click();
       }
     });
   });
